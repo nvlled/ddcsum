@@ -1,4 +1,4 @@
-const generateCutter = require("cuttersanborn");
+const generateCutterNumber = require("cuttersanborn");
 
 const util = {
     firstLowerLetter(str) {
@@ -24,12 +24,12 @@ function generateCallNumber(args) {
     if (biographySubject) {
         let {firstname: bfname, lastname: blname} = biographySubject || {};
         fields = fields.concat([
-            generateCutter(blname, bfname) + suf,
-            generateCutter(alname, afname),
+            generateCutterNumber(blname, bfname) + suf,
+            generateCutterNumber(alname, afname),
         ]);
     } else if (afname && alname) {
         fields = fields.concat([
-            generateCutter(alname, afname)+suf,
+            generateCutterNumber(alname, afname)+suf,
         ]);
     }
     if (!isNaN(+copyNumber)) {
@@ -44,5 +44,6 @@ function generateCallNumber(args) {
 
 module.exports = {
     data: require("./data.js"),
+    generateCutterNumber,
     generateCallNumber,
 }
