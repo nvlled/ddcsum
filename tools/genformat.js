@@ -5,7 +5,7 @@ const process = require("process");
 
 async function writeJson(summary) {
     let json = JSON.stringify(summary, null, 4);
-    await fs.writeFileAsync("ddcsum.json", json);
+    await fs.writeFileAsync("data.json", json);
 }
 
 function writeSqlite(summary) {
@@ -24,15 +24,18 @@ async function main() {
         return;
     }
 
-    let summary = [];
+    let summary = {};
     for (let line of lines) {
         let [_, classNum, heading] = line.match(/^(\d+) (.*)$/) ||[];
         if (!classNum || !heading)
             continue;
-        summary.push({
-            classNum,
-            heading,
-        });
+
+        let heading_ = summary[classNum];
+        if (heading_) {
+            console.warn(`duplicate entry for ${classNum}, overwrite ${heading_} -> ${heading}`);
+        }
+        summary[classNum] = heading;
+
     }
     writeJson(summary);
 }

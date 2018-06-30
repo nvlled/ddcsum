@@ -1,4 +1,4 @@
-const data = {
+{
     "100": "Philosophy & psychology",
     "101": "Theory of philosophy",
     "102": "Miscellany",
@@ -998,5 +998,3 @@ const data = {
     "098": "Prohibited works, forgeries & hoaxes",
     "099": "Books notable for format"
 }
-
-module.exports = data;
