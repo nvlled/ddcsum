@@ -1,0 +1,16 @@
+{
+  "name": "ddcsum",
+  "version": "1.0.0",
+  "description": "a repository for ddc summaries in different formats",
+  "repository": "https://github.com/nvlled/ddcsum",
+  "main": "ddcsum.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
