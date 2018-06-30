@@ -13,7 +13,7 @@ function writeSqlite(summary) {
 }
 
 async function main() {
-    let filename = process.argv.slice(2)[0] || "db.txt";
+    let filename = process.argv.slice(2)[0] || "data.txt";
 
     let lines = [];
     try {
