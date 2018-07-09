@@ -32,7 +32,10 @@ function generateCallNumber(args) {
             generateCutterNumber(alname, afname)+suf,
         ]);
     }
-    if (!isNaN(+copyNumber)) {
+
+    if (typeof copyNumber == "string")
+        copyNumber = copyNumber.trim();
+    if (!!copyNumber && !isNaN(+copyNumber)) {
         fields.push(`c.${copyNumber}`);
     }
     if (publishYear) {
