@@ -5,7 +5,7 @@ a library for generating DDC cutter numbers and call numbers,
 and also a repository for ddc (3rd) summaries in different formats
 
 # Usage and API Documentation
-```
+```es6
 // import
 const ddcsum = require("ddcsum");
 
